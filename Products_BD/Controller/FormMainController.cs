@@ -46,7 +46,7 @@ namespace Products_BD.Controller
         }
         public void UpdateToDataGritViewProducts(string pro, string tel, string name, string add, int price, int id)
         {
-            _dbManager.TableWorkers.CreateNewProducts(pro, tel, name, add, price, id);
+            _dbManager.TableWorkers.UpdateNewProducts(pro, tel, name, add, price, id);
         }
 
     }

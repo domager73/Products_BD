@@ -46,12 +46,12 @@ namespace Products_BD
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(textBoxUpdate.Text);
+            int id = textBoxUpdate.Text != null? int.Parse(textBoxUpdate.Text): 1;
             string pro = textBoxPro.Text;
             string tel = textBoxTel.Text;
             string name = textBoxName.Text;
             string add = textBoxAdd.Text;
-            int price = int.Parse(textBoxPri.Text);
+            int price = textBoxPri != null? int.Parse(textBoxPri.Text):1;
 
             _formMainController.UpdateToDataGritViewProducts(pro, tel, name, add, price, id);
             _formMainController.PrintToDoDataGritViewProducts();

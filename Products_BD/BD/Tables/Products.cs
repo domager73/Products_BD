@@ -70,9 +70,44 @@ namespace tEST_bd.Db
 
         public void UpdateNewProducts(string prod, string tel, string name, string address, int price,int id)
         {
-            if (prod == null) 
+            if (prod != null) 
             {
+                string sqlRequest = $"UPDATE products SET product = '{prod}'  WHERE id = {id};";
 
+                var cmd = new NpgsqlCommand(sqlRequest, _connection);
+                cmd.ExecuteNonQuery();
+            }
+
+            if (tel != null)
+            {
+                string sqlRequest = $"UPDATE products SET number_tel = '{tel}'  WHERE id = {id};";
+
+                var cmd = new NpgsqlCommand(sqlRequest, _connection);
+                cmd.ExecuteNonQuery();
+            }
+
+            if (name != null)
+            {
+                string sqlRequest = $"UPDATE products SET name = '{name}'  WHERE id =  {id} ;";
+
+                var cmd = new NpgsqlCommand(sqlRequest, _connection);
+                cmd.ExecuteNonQuery();
+            }
+
+            if (address != null)
+            {
+                string sqlRequest = $"UPDATE products SET address = '{address}'  WHERE id = {id};";
+
+                var cmd = new NpgsqlCommand(sqlRequest, _connection);
+                cmd.ExecuteNonQuery();
+            }
+
+            if (price != 1)
+            {
+                string sqlRequest = $"UPDATE products SET price = '{price}'  WHERE id = {id};";
+
+                var cmd = new NpgsqlCommand(sqlRequest, _connection);
+                cmd.ExecuteNonQuery();
             }
         }
     }
