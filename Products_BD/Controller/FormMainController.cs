@@ -20,6 +20,7 @@ namespace Products_BD.Controller
             _dbManager = DbManager.Instance;
         }
 
+
         public void PrintToDoDataGritViewProducts()
         {
             DataGridView dataGridView = (DataGridView)FormMain.Controls["dataGridView1"];
